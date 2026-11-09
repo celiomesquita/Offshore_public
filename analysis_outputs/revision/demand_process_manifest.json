@@ -1,0 +1,19 @@
+{
+  "window": [
+    "2024-01-01",
+    "2026-03-31"
+  ],
+  "nonzero_cost_fields_all_1711": {
+    "Purchase Count": 0,
+    "Purchase Cost": 0,
+    "Exchange Count": 0,
+    "Exchange Cost": 0,
+    "Repair Count": 54,
+    "Repair Cost": 53,
+    "Exchg Repair Count": 7,
+    "Exchg Repair Cost": 7,
+    "Scrap Count": 3,
+    "Scrap Cost": 2
+  },
+  "test": "Lilliefors exponential test on gaps between distinct removal days; same-day removals treated as one batch"
+}

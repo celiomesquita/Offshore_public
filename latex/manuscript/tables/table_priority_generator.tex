@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Known-truth synthetic fleets: coverage of the true test burden by the top three chapters (\%) and difference between the consequence priority ($w=0.5$) and frequency (percentage points).}
+\label{tab:priority-generator}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Scenario & Freq. & Cons. & Oracle & Diff. (SE) & Better & Worse & Work diff. & Parts diff. \\
+\midrule
+Base case & 48.4 & 54.1 & 55.0 & +5.7 (0.3) & 63\% & 18\% & +2.6 & +8.7 \\
+Labour heterogeneity $\sigma_m=0.25$ & 50.8 & 54.6 & 55.4 & +3.8 (0.2) & 52\% & 18\% & -2.7 & +10.3 \\
+Labour heterogeneity $\sigma_m=1.25$ & 47.7 & 58.3 & 59.3 & +10.5 (0.4) & 74\% & 13\% & +13.9 & +6.7 \\
+Parts-value heterogeneity $\sigma_c=0.5$ & 50.3 & 52.8 & 53.6 & +2.5 (0.2) & 48\% & 19\% & +4.5 & +0.5 \\
+Parts-value heterogeneity $\sigma_c=1.5$ & 47.5 & 58.0 & 58.8 & +10.5 (0.4) & 73\% & 14\% & +1.0 & +19.6 \\
+Rate--labour correlation $-0.6$ & 42.9 & 48.3 & 49.5 & +5.4 (0.3) & 64\% & 19\% & +2.1 & +8.6 \\
+Rate--labour correlation $0.6$ & 55.6 & 60.5 & 61.0 & +4.9 (0.3) & 54\% & 16\% & +0.6 & +9.1 \\
+All work observed & 48.3 & 55.0 & 55.6 & +6.7 (0.3) & 66\% & 13\% & +3.6 & +9.5 \\
+Less complete in high-labour chapters & 52.9 & 57.1 & 59.0 & +4.2 (0.3) & 56\% & 22\% & +2.3 & +7.0 \\
+Long interventions less complete & 48.7 & 54.2 & 55.4 & +5.4 (0.3) & 61\% & 19\% & +3.1 & +8.9 \\
+Six training months & 50.3 & 55.5 & 57.2 & +5.2 (0.3) & 57\% & 22\% & +2.5 & +7.6 \\
+24 training months & 49.2 & 55.2 & 55.5 & +5.9 (0.3) & 62\% & 14\% & +2.9 & +8.7 \\
+15 removals per month & 54.2 & 58.2 & 61.4 & +4.1 (0.4) & 49\% & 32\% & +0.9 & +6.5 \\
+250 removals per month & 48.9 & 55.2 & 55.5 & +6.3 (0.2) & 71\% & 8\% & +3.4 & +9.1 \\
+10 chapters & 65.5 & 71.2 & 71.8 & +5.7 (0.3) & 55\% & 12\% & +3.3 & +8.2 \\
+40 chapters & 36.9 & 42.5 & 43.5 & +5.6 (0.3) & 67\% & 20\% & +2.3 & +8.7 \\
+Overdispersed demand ($\alpha=1$) & 40.3 & 45.2 & 56.9 & +4.9 (0.5) & 44\% & 27\% & +2.8 & +6.1 \\
+Heavy-tailed labour (CV 2.5) & 49.7 & 53.7 & 56.2 & +4.0 (0.3) & 54\% & 30\% & +0.4 & +7.4 \\
+Only recorded work scored & 49.1 & 56.2 & 57.0 & +7.1 (0.4) & 60\% & 17\% & +1.4 & +8.3 \\
+Fleet-like, true burden & 53.4 & 58.5 & 60.5 & +5.1 (0.4) & 56\% & 27\% & -4.8 & +15.3 \\
+Fleet-like, recorded work scored & 49.0 & 61.3 & 64.2 & +12.2 (0.6) & 64\% & 18\% & -6.3 & +16.6 \\
+Fleet-like, leading chapter unrecorded & 46.7 & 60.0 & 61.7 & +13.3 (0.6) & 64\% & 19\% & -5.0 & +16.3 \\
+\bottomrule
+\end{tabular}}
+\par\smallskip
+{\footnotesize 1,000 synthetic fleets per scenario; one factor changed from the base case (20 chapters, 63 removals per month, 12 training months, lognormal dispersion 1.2 for rates, 0.75 for labour and 1.0 for parts value, 22\% of work observed at random). Fleet-like scenarios use 27 chapters, dispersions 1.5/0.5/1.5, rate--labour correlation 0.4 and labour CV 2.5. Better/Worse: share of fleets in which the consequence priority covers more/less of the combined burden. Work and parts differences refer to each outcome separately. Oracle: selection by the true expected burden.}
+\end{table}

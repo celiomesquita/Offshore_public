@@ -1,0 +1,9 @@
+{
+  "scenario": "S-B, per-part immediate fill >= 0.85",
+  "calendar_hours": 19704,
+  "lead_time_days": 35,
+  "part_alpha_weighted_mom": 0.3194485952133194,
+  "panel_alpha": 16.61463628772714,
+  "max_stock_level": 500,
+  "ao_exported": false
+}

@@ -1,0 +1,511 @@
+\section{Samples, units and observation limits}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{p{6cm}p{9cm}}
+
+\caption{Sample and unit registry. Counts refer to distinct stated populations.}\label{tab:s-samples}\\
+
+\toprule
+
+Population or quantity & Value / interpretation \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Population or quantity & Value / interpretation \\
+
+\midrule
+
+\endhead
+
+Observation window & 1 January 2024--31 March 2026; 821 calendar days \\
+
+Flight records / fleet exposure & 11,926 records / 33,486.6 flight hours \\
+
+Populated removal records & 7,308; not the 32,767 physical worksheet rows \\
+
+Tracked unscheduled mechanical removals & 1,711; 43 lack an aircraft identifier \\
+
+Panel-linked removals & 1,668 before the model-specific exposure exclusions \\
+
+Full-window NB events & 1,499; distinct from rolling training/test samples \\
+
+Maintenance-task records & 57,029 \\
+
+Removal-linked documents / with tasks & 1,263 / 1,207 \\
+
+Complete linked-work documents / events & 354 / 376 \\
+
+Complete / known linked work & 2,043.80 / 33,564.51 labour-hours; different completeness rules \\
+
+Recorded parts value & USD 56,313,204.83; not actual expenditure \\
+
+Removal installation intervals & Calendar days; no surviving installed population observed \\
+
+Empirical logistics time & Calendar hours; 19,704-hour window; assumed 35-day lead time \\
+
+Synthetic lifetime & Operating days; ageing pauses during downtime \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+Work is allocated once per linked document, equally across its tracked removals. Complete work requires valid task hours and sign-off dates; unresolved zero-hour administrative orders are excluded. The latest removal/sign-off date is a retrospective information-availability proxy, not a transaction timestamp. Independent safety assessment and observed AOG intervals are unavailable. No pseudocensored survival sample is constructed.
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{rrrr}
+
+\caption{Work completeness by ATA chapter. Zero complete cases are retained.}\label{tab:s-selection}\\
+
+\toprule
+
+ATA & Removals & Complete events & Complete (\%) \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+ATA & Removals & Complete events & Complete (\%) \\
+
+\midrule
+
+\endhead
+
+18 & 2 & 1 & 50.00 \\
+
+21 & 82 & 23 & 28.05 \\
+
+22 & 73 & 7 & 9.59 \\
+
+23 & 40 & 29 & 72.50 \\
+
+24 & 71 & 33 & 46.48 \\
+
+25 & 82 & 19 & 23.17 \\
+
+26 & 7 & 2 & 28.57 \\
+
+28 & 8 & 1 & 12.50 \\
+
+29 & 18 & 0 & 0.00 \\
+
+31 & 148 & 78 & 52.70 \\
+
+32 & 282 & 110 & 39.01 \\
+
+33 & 35 & 13 & 37.14 \\
+
+34 & 57 & 35 & 61.40 \\
+
+35 & 2 & 1 & 50.00 \\
+
+45 & 5 & 2 & 40.00 \\
+
+53 & 10 & 0 & 0.00 \\
+
+55 & 5 & 0 & 0.00 \\
+
+62 & 541 & 7 & 1.29 \\
+
+63 & 74 & 4 & 5.41 \\
+
+64 & 91 & 0 & 0.00 \\
+
+65 & 20 & 0 & 0.00 \\
+
+67 & 17 & 2 & 11.76 \\
+
+71 & 7 & 0 & 0.00 \\
+
+72 & 3 & 0 & 0.00 \\
+
+73 & 11 & 3 & 27.27 \\
+
+75 & 9 & 1 & 11.11 \\
+
+77 & 11 & 5 & 45.45 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+\section{Rolling forecasts and priority evaluation}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{rlrrr}
+
+\caption{Mean errors across rolling origins; these are descriptive point comparisons.}\label{tab:s-forecasts}\\
+
+\toprule
+
+Horizon (months) & Method & Origins & MAE & RMSE \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Horizon (months) & Method & Origins & MAE & RMSE \\
+
+\midrule
+
+\endhead
+
+3 & Cumulative rate & 13 & 1.861290 & 3.055290 \\
+
+3 & NB2 & 13 & 1.857304 & 3.059524 \\
+
+3 & Poisson & 13 & 1.849070 & 3.081009 \\
+
+3 & recent 6m rate & 13 & 1.920704 & 3.321381 \\
+
+6 & Cumulative rate & 10 & 2.830874 & 4.360200 \\
+
+6 & NB2 & 10 & 2.868181 & 4.527827 \\
+
+6 & Poisson & 10 & 2.845454 & 4.549057 \\
+
+6 & recent 6m rate & 10 & 3.109036 & 5.036434 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+Eligibility and estimation use only past observations; counts are conditioned on realised future flight hours. The 46 fitted count models converged. Overlapping origins are not independent replications, and no forecast-interval or significance claim is made.
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{lrr}
+
+\caption{Mean priority coverage over 13 three-month origins; top-three selection with fractional boundary ties.}\label{tab:s-priorities}\\
+
+\toprule
+
+Method & Observed work (\%) & Parts value (\%) \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Method & Observed work (\%) & Parts value (\%) \\
+
+\midrule
+
+\endhead
+
+Labour weight 0.00 & 60.0130 & 57.6304 \\
+
+Labour weight 0.25 & 58.6440 & 54.9890 \\
+
+Labour weight 0.50 & 56.9436 & 52.2176 \\
+
+Labour weight 0.75 & 52.0878 & 48.6569 \\
+
+Labour weight 1.00 & 41.0403 & 39.9403 \\
+
+Frequency & 60.0130 & 57.6304 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+Each origin uses the same training-defined ATA universe across methods, containing 15--18 chapters with both consequences observed. Weights are prespecified preference scenarios. No weight is chosen by test performance; coverage does not measure realised operational savings.
+
+\section{Sensitivity to unobserved work}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{rp{2.4cm}p{3.6cm}rr}
+
+\caption{Unbounded fixed-selection work envelopes, including known partial-work floors. Bounds are differences in coverage, not confidence limits.}\label{tab:s-missing-work}\\
+
+\toprule
+
+$w$ & Identical selections & Origins permitting positive reversal & Mean infimum & Mean supremum \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+$w$ & Identical selections & Origins permitting positive reversal & Mean infimum & Mean supremum \\
+
+\midrule
+
+\endhead
+
+0.00 & 13 & 0 & 0.000000 & 0.000000 \\
+
+0.25 & 12 & 0 & -0.076923 & 0.000000 \\
+
+0.50 & 11 & 0 & -0.153846 & 0.000000 \\
+
+0.75 & 7 & 6 & -0.461538 & 0.461538 \\
+
+1.00 & 0 & 13 & -1.000000 & 1.000000 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+The finite-cap grid uses 0, 0.5, 1, 2, 5 and 10 times the training mean complete work per event. All 390 method--origin--cap comparisons fail compatibility with known partial work and are not presented as plausible bounded imputations. The unbounded analysis contains 65 method--origin comparisons. It keeps the original selections fixed and changes the target to eventual work of test removals. Originwise envelopes ignore shared-document constraints and are not a coherent joint imputation across overlapping horizons. They do not account for refitting priorities.
+
+\section{Corrected logistics calculations}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{lrrrr}
+
+\caption{Poisson logistics scenarios with corrected EBO and immediate fill probability.}\label{tab:s-logistics}\\
+
+\toprule
+
+Scenario & Investment (USD) & EBO & Minimum fill & Wait (h) \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Scenario & Investment (USD) & EBO & Minimum fill & Wait (h) \\
+
+\midrule
+
+\endhead
+
+S-A & 49687.56 & 25.756272 & 0.000000 & 528.097379 \\
+
+S-B & 2020082.71 & 0.840926 & 0.852501 & 17.242040 \\
+
+S-C & 2462538.52 & 0.243200 & 0.950230 & 4.986482 \\
+
+S-D & 199964.69 & 16.175025 & 0.000000 & 331.646926 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+S-A and S-D impose investment budgets of USD 50,000 and USD 200,000. S-B and S-C impose minimum immediate fill probabilities of 0.85 and 0.95. The 20-part scope assumes quantity per aircraft equal to one and a common 35-day replenishment time. Waiting time is EBO divided by demand rate; it excludes intervention and administrative delays. No aircraft availability or grounded-cost estimate is derived from this ratio. Integer-reference EBO gaps are 0.088\% and 0.726\% for the budget scenarios. Separate enumeration of 60 three-part synthetic instances finds ten non-optimal heuristic allocations; this is not a bound on empirical fleet performance.
+
+\section{Synthetic joint-policy parameters and independent evaluation}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{lrl}
+
+\caption{Base synthetic parameters. None are estimated component-lifetime or AOG parameters of the operator.}\label{tab:s-joint-parameters}\\
+
+\toprule
+
+Parameter & Value & Unit \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Parameter & Value & Unit \\
+
+\midrule
+
+\endhead
+
+assets & 8 & assets \\
+
+shape & 2.0 & dimensionless \\
+
+scale & 180.0 & operating days \\
+
+lead days & 20.0 & calendar days \\
+
+corrective days & 2.0 & calendar days \\
+
+preventive days & 0.5 & calendar days \\
+
+part price & 1000.0 & USD/part \\
+
+corrective work cost & 500.0 & USD/intervention \\
+
+preventive work cost & 150.0 & USD/intervention \\
+
+down cost per day & 2000.0 & USD/unavailable asset-day \\
+
+capital rate & 0.2 & fraction/year \\
+
+warmup days & 365.0 & calendar days \\
+
+measurement days & 3650.0 & calendar days \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+The model has one essential position per asset, perfect renewal, unconstrained intervention teams, FIFO backlog and purchased replenishment after every demand. Events preserve on-hand stock plus pipeline minus backlog equal to base stock. Initial inventory investment is separate from annual cost. The selection grid has ten ages (60, 90, 120, 150, 180, 210, 240, 300, 360 and infinity) and 15 stock levels (0--12, 16, 24), with seeds 0--7. Candidates are frozen before 50 paired evaluation seeds 1000--1049. The selected joint policy is age 150 operating days with stock six; corrective stocking uses five. These policies do not have equal initial investment.
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{lrrrr}
+
+\caption{Joint candidate minus corrective-stock policy: annual cost difference, with individual paired Monte Carlo 95\% intervals.}\label{tab:s-joint-evaluation}\\
+
+\toprule
+
+Setting & Difference (USD) & Lower & Upper & Relative (\%) \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Setting & Difference (USD) & Lower & Upper & Relative (\%) \\
+
+\midrule
+
+\endhead
+
+long horizon & -8305.08 & -8856.39 & -7753.78 & -8.268 \\
+
+long warmup & -8579.89 & -9433.68 & -7726.10 & -8.472 \\
+
+no warmup & -7443.78 & -8315.28 & -6572.28 & -7.442 \\
+
+primary & -8233.34 & -9045.95 & -7420.74 & -8.140 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+Primary warm-up/measurement is 365/3,650 days. Checks use 0/3,650, 1,095/3,650 and 365/7,300 days. Intervals quantify simulation error with fixed inputs, not parameter uncertainty or external validity.
+
+\section{Synthetic transfer sensitivities}
+
+\begin{small}
+
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{llrrrr}
+
+\caption{Annual cost contrasts against the scenario-adapted corrective-stock policy. Adapted joint and unchanged base-candidate transfer are distinct comparisons.}\label{tab:s-joint-sensitivity}\\
+
+\toprule
+
+Scenario & Policy & Difference (USD) & 95\% lower & 95\% upper & Relative (\%) \\
+
+\midrule
+
+\endfirsthead
+
+\toprule
+
+Scenario & Policy & Difference (USD) & 95\% lower & 95\% upper & Relative (\%) \\
+
+\midrule
+
+\endhead
+
+base & Adapted & -8131.05 & -9011.10 & -7251.01 & -8.04 \\
+
+base & Transferred & -8131.05 & -9011.10 & -7251.01 & -8.04 \\
+
+downcost 0 & Adapted & -31.20 & -60.50 & -1.90 & -0.13 \\
+
+downcost 0 & Transferred & 8676.10 & 8465.12 & 8887.08 & 35.80 \\
+
+downcost 200 & Adapted & -54.92 & -125.87 & 16.02 & -0.15 \\
+
+downcost 200 & Transferred & 3445.59 & 3136.99 & 3754.20 & 9.71 \\
+
+downcost 20000 & Adapted & -141923.97 & -150744.24 & -133103.70 & -18.75 \\
+
+downcost 20000 & Transferred & -122936.43 & -129840.62 & -116032.23 & -16.24 \\
+
+lead 0 & Adapted & -8291.81 & -9175.12 & -7408.50 & -8.29 \\
+
+lead 0 & Transferred & -7091.81 & -7975.12 & -6208.50 & -7.09 \\
+
+lead 5 & Adapted & -8178.04 & -9063.67 & -7292.40 & -8.12 \\
+
+lead 5 & Transferred & -7783.09 & -8670.47 & -6895.72 & -7.73 \\
+
+lead 60 & Adapted & -8885.23 & -10139.33 & -7631.13 & -8.59 \\
+
+lead 60 & Transferred & 25690.31 & 21338.53 & 30042.09 & 24.84 \\
+
+price 100 & Adapted & -15476.07 & -16449.75 & -14502.38 & -18.45 \\
+
+price 100 & Transferred & -13455.45 & -14218.56 & -12692.34 & -16.04 \\
+
+price 10000 & Adapted & 0.00 & 0.00 & 0.00 & 0.00 \\
+
+price 10000 & Transferred & 46038.04 & 43569.07 & 48507.00 & 16.87 \\
+
+shape 0.7 & Adapted & 0.00 & 0.00 & 0.00 & 0.00 \\
+
+shape 0.7 & Transferred & 61621.97 & 58511.51 & 64732.43 & 60.42 \\
+
+shape 1 & Adapted & 0.00 & 0.00 & 0.00 & 0.00 \\
+
+shape 1 & Transferred & 25015.85 & 22939.01 & 27092.69 & 24.66 \\
+
+shape 3 & Adapted & -21157.80 & -21845.24 & -20470.37 & -20.97 \\
+
+shape 3 & Transferred & -18537.50 & -19209.84 & -17865.16 & -18.37 \\
+
+\bottomrule
+
+\end{longtable}
+
+\end{small}
+
+The twelve scenarios vary one factor at a time: base; Weibull shape 0.7, 1 and 3 with mean lifetime preserved; purchase lead time 0, 5 and 60 days; downtime cost USD 0, 200 and 20,000 per unavailable asset-day; and part price USD 100 and 10,000. Selection uses seeds 0--7, followed by 50 new paired seeds 2000--2049. All scenario candidates are frozen before evaluation. Intervals are individual, without simultaneous multiple-comparison coverage. Adapted policies revert to corrective-only under shapes 0.7 and 1 and high part price. Small cost gains with zero downtime tariff accompany lower availability; the USD 200/day contrast includes zero. No repairable-item workshop, random lead time or interaction between sensitivity factors is represented.
+
+\section{Reproduction and anonymisation}
+
+The author authorises sharing of operational data after removal of company names, aircraft registrations and other identifying information. Reidentification mappings and identifiable originals are excluded. Anonymisation must preserve dates, exposure, event linkage and missingness needed to reproduce the stated analyses. The current local computational candidate reproduces the synthetic experiments and mathematical tests; this does not establish that the complete revised empirical package is already publicly accessible. Its data release requires verification of the anonymised inputs and their derived results. No superseded safety weighting, pseudocensoring, empirical AOG cost or 81-day replacement prescription is part of this supplement.

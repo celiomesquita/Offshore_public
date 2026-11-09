@@ -1,0 +1,23 @@
+{
+  "rows": 14067,
+  "aircraft": 24,
+  "months": 27,
+  "ata2_systems": 27,
+  "total_flight_hours": 33486.59999999999,
+  "total_removals": 1668,
+  "total_nst_allocated": 1669.0,
+  "total_manhours_allocated": 21423.46,
+  "alhwo_tasks_excluded": 3263,
+  "alhwo_manhours_excluded": 0.0,
+  "tasks_without_ata_link": 41199,
+  "removals_excluded_no_aircraft": 43,
+  "removals_on_zero_hour_months": 33,
+  "low_exposure_aircraft": [
+    "AC-01",
+    "AC-18",
+    "AC-23"
+  ],
+  "is_balanced": true,
+  "aircraft_month_cells": 521,
+  "expected_balanced_rows": 14067
+}

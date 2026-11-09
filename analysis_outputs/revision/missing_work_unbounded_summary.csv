@@ -1,0 +1,6 @@
+method,equal_origins,positive_reversal_origins,mean_floor_infimum,mean_floor_supremum
+consequence_w0.00,13,0,0.0,0.0
+consequence_w0.25,12,0,-0.07692307692307693,0.0
+consequence_w0.50,11,0,-0.15384615384615385,0.0
+consequence_w0.75,7,6,-0.46153846153846156,0.46153846153846156
+consequence_w1.00,0,13,-1.0,1.0

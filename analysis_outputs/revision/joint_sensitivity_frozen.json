@@ -1,0 +1,475 @@
+{
+  "protocol": "docs/MR06_SENSITIVITY_PROTOCOL.md",
+  "training_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "evaluation_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049
+  ],
+  "scenarios": {
+    "base": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 5
+        },
+        "joint_adapted": {
+          "age_days": 150.0,
+          "stock": 6
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "shape_0.7": {
+      "parameters": {
+        "assets": 8,
+        "shape": 0.7,
+        "scale": 126.02139699424852,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 6
+        },
+        "joint_adapted": {
+          "age_days": "infinity",
+          "stock": 6
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "shape_1": {
+      "parameters": {
+        "assets": 8,
+        "shape": 1.0,
+        "scale": 159.52084658149644,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 6
+        },
+        "joint_adapted": {
+          "age_days": "infinity",
+          "stock": 6
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "shape_3": {
+      "parameters": {
+        "assets": 8,
+        "shape": 3.0,
+        "scale": 178.63886518646714,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 5
+        },
+        "joint_adapted": {
+          "age_days": 120.0,
+          "stock": 6
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "lead_0": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 0.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 0
+        },
+        "joint_adapted": {
+          "age_days": 150.0,
+          "stock": 0
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "lead_5": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 5.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 3
+        },
+        "joint_adapted": {
+          "age_days": 150.0,
+          "stock": 4
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "lead_60": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 60.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 7
+        },
+        "joint_adapted": {
+          "age_days": 150.0,
+          "stock": 8
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "downcost_0": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 0.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 0
+        },
+        "joint_adapted": {
+          "age_days": 360.0,
+          "stock": 0
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "downcost_200": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 200.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 4
+        },
+        "joint_adapted": {
+          "age_days": 360.0,
+          "stock": 4
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "downcost_20000": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 1000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 20000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 5
+        },
+        "joint_adapted": {
+          "age_days": 120.0,
+          "stock": 7
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "price_100": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 100.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 5
+        },
+        "joint_adapted": {
+          "age_days": 120.0,
+          "stock": 7
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    },
+    "price_10000": {
+      "parameters": {
+        "assets": 8,
+        "shape": 2.0,
+        "scale": 180.0,
+        "lead_days": 20.0,
+        "corrective_days": 2.0,
+        "preventive_days": 0.5,
+        "part_price": 10000.0,
+        "corrective_work_cost": 500.0,
+        "preventive_work_cost": 150.0,
+        "down_cost_per_day": 2000.0,
+        "capital_rate": 0.2,
+        "warmup_days": 365.0,
+        "measurement_days": 3650.0
+      },
+      "policies": {
+        "corrective_adapted": {
+          "age_days": "infinity",
+          "stock": 4
+        },
+        "joint_adapted": {
+          "age_days": "infinity",
+          "stock": 4
+        },
+        "base_transferred": {
+          "age_days": 150.0,
+          "stock": 6
+        }
+      },
+      "joint_stock_boundary": false,
+      "joint_age_lower_boundary": false,
+      "mean_operating_lifetime": 159.52084658149644
+    }
+  }
+}
