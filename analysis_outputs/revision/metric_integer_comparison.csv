@@ -1,3 +1,0 @@
-scenario,budget,investment_usd,integer_ebo,heuristic_ebo,heuristic_relative_gap,solver_status,solver_message,mip_gap,lower_bound
-S-A,50000,49997.83,25.733662868740247,25.756271905189354,0.0008785782484378457,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.0,25.733662868740247
-S-D,200000,199990.10999999996,16.058448265001694,16.175025167805188,0.007259537215533205,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.0,16.058448265001694

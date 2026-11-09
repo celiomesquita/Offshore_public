@@ -1,6 +1,0 @@
-method,work_mean_pp,cost_mean_pp,work_wins,cost_wins,joint_wins,joint_losses,equal
-consequence_w0.00,0.0,0.0,0,0,0,0,13
-consequence_w0.25,-1.3689700130378097,-2.6414141224907906,0,0,0,1,12
-consequence_w0.50,-3.069374871337405,-5.412819031930443,0,0,0,2,11
-consequence_w0.75,-7.925114991965744,-8.973510260164778,0,0,0,6,7
-consequence_w1.00,-18.972665010052655,-17.690156933477,0,0,0,13,0

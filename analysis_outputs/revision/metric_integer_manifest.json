@@ -1,8 +1,0 @@
-{
-  "formulation": "one stock level selected per part; sum cost <= budget; minimise sum EBO",
-  "demand": "Poisson; same calibration and inputs as corrected heuristic",
-  "stock_cap": 169,
-  "time_limit_seconds": 60,
-  "requested_relative_gap": 1e-08,
-  "interpretation": "integer reference conditional on model and input data, not empirical operational benefit"
-}

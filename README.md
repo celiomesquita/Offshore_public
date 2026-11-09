@@ -4,7 +4,7 @@ Replication package for the revised manuscript
 
 > A. C. P. de Mesquita, *From Offshore Maintenance Records to Fleet Priorities: Evidence Limits and Joint Policies*, submitted to *Reliability Engineering & System Safety* (manuscript JRESS-D-26-04044, revision).
 
-The package contains the anonymised operational data, the analysis code, the generated results and the supplementary tables (S1–S9). Every analysis reported in the revised manuscript can be rerun from the data in `data/`.
+It contains the anonymised operational data, the code needed to reproduce every analysis of the revised manuscript, and the supplementary material (Tables S1–S9).
 
 ## Contents
 
@@ -12,40 +12,32 @@ The package contains the anonymised operational data, the analysis code, the gen
 |---|---|
 | `data/` | Anonymised operator extracts: `hours_flown.xlsx` (flight logs), `removals.xlsx` (component removals), `OMTH_tasks.xlsx` (work-order tasks) |
 | `config/public/aircraft_id_map.csv` | Pseudonymised aircraft identifiers with total flight hours and exposure band |
+| `analysis_outputs/revision/pillar_dependency_inputs.csv` | Original pillar scores by ATA chapter from the composite of the original submission (withdrawn in the revision); frozen input to the correlation table |
 | `ramsc/` | Python package: panel construction, METRIC with corrected expected backorders, frequency–consequence priority, missing-work bounds, joint age–stock simulator |
 | `scripts/` | One script per analysis; `scripts/run_all.py` runs the whole pipeline in order |
-| `tests/` | Unit tests (METRIC identities, priority, missing-work bounds, joint simulator, event construction) |
-| `analysis_outputs/` | Results generated from `data/` (CSV/JSON) |
-| `latex/manuscript/tables`, `latex/manuscript/figures` | Generated tables and figures |
-| `supplementary/` | Supplementary material (Tables S1–S9): `supplementary.pdf` and LaTeX sources |
-| `docs/` | Pre-specified protocols for the rolling-origin, priority, missing-work and joint-policy experiments |
+| `supplementary/` | Supplementary material: `supplementary.pdf` (Tables S1–S9) and LaTeX sources |
 
 ## Reproducing the results
 
-Tested with Python 3.14 on Windows; the versions used are pinned in `requirements.txt`.
+Tested with Python 3.14; package versions are pinned in `requirements.txt`.
 
 ```bash
 python -m venv .venv
 .venv/bin/pip install -r requirements.txt     # Windows: .venv\Scripts\pip
 python scripts/run_all.py                     # full pipeline, about 4 minutes
 python scripts/run_all.py --skip-simulation   # empirical analyses only
-python -m pytest tests
 ```
 
-Each script can also be run individually from the repository root with `PYTHONPATH=.:scripts`.
+The pipeline writes the results to `analysis_outputs/`, the tables and figures to `latex/manuscript/tables` and `latex/manuscript/figures`, and Supplementary Tables S1–S9 to `supplementary/revision_tables.tex`. Each script can also be run individually from the repository root with `PYTHONPATH=.:scripts` (Windows: `.;scripts`).
 
-Running the pipeline on the anonymised data reproduces all results files in `analysis_outputs/revision` exactly, as obtained with the original confidential records. Three remarks:
-
-- Removal-count ties in the descriptive ATA and component Pareto tables may be listed in a different order than in the manuscript.
-- The tables in `latex/manuscript/tables` are generated drafts; some were edited for layout in the manuscript. The CSV files are the reference values.
-- `analysis_outputs/revision/pillar_dependency_inputs.csv` contains the original pillar scores by ATA chapter from the composite of the original submission, which the revision withdraws. It is distributed as a frozen derived input to the correlation table and is not rebuilt.
+Run on the anonymised data, the pipeline reproduces exactly the results obtained from the original confidential records. Removal-count ties in the descriptive ATA and component Pareto tables may be listed in a different order than in the manuscript, and some generated tables were edited for layout in the manuscript; the CSV files are the reference values.
 
 ## Map from manuscript to scripts
 
 | Manuscript element | Script |
 |---|---|
-| Panel, event dataset, work completeness | `build_panel.py`, `build_revision_event_consequences.py`, `audit_revision_selection.py` |
-| Pareto concentration, NB panel, maintainability table | `export_r1_pareto.py`, `export_r2_pareto.py`, `fit_nb_panel.py`, `export_m1_maintainability.py` |
+| Panel, event dataset, work completeness | `build_panel.py`, `build_revision_event_consequences.py`, `build_doc_task_link.py`, `audit_revision_selection.py` |
+| Pareto concentration, NB panel, maintainability table | `build_part_pareto.py`, `export_r1_pareto.py`, `export_r2_pareto.py`, `fit_nb_panel.py`, `export_m1_maintainability.py` |
 | Rolling-origin count forecasts | `run_revision_count_forecasts.py`, `run_revision_rolling_baselines.py` |
 | Frequency–consequence priority comparison | `run_revision_priority_backtest.py` |
 | Weights as exchange rates | `run_revision_weight_tradeoff.py` |
@@ -68,17 +60,12 @@ The data come from a fleet of 24 medium twin-engine helicopters in offshore tran
 - technicians' names, licence numbers and sign-off remarks are removed, and personal names in free text are replaced by `[PERSON]`;
 - aircraft serial numbers and the "Removed By" field are removed.
 
-Part numbers are kept, because they are common to several aircraft types. Raw records and the re-identification maps are not distributed. The released files were checked automatically for registrations, company, location and installation names, ICAO codes, original identifiers and personal names.
+Part numbers are kept, because they are common to several aircraft types. Raw records and the re-identification maps are not distributed.
 
 ## Licences
 
-- Code (`ramsc/`, `scripts/`, `tests/`): MIT licence, see `LICENSE`.
-- Data, results, supplementary material and documentation: Creative Commons Attribution 4.0 International (CC BY 4.0), see `LICENSE-DATA.md`.
-
-## Citation
-
-Please cite the article and this repository; see `CITATION.cff`.
+Code (`ramsc/`, `scripts/`): MIT licence (`LICENSE`). Data and supplementary material: CC BY 4.0 (`LICENSE-DATA.md`).
 
 ## Contact
 
-Antonio Celio Pereira de Mesquita — Aerospace Logistics Engineering Laboratory (AeroLogLab), Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, Brazil — celio@ita.br — ORCID [0000-0002-3145-9987](https://orcid.org/0000-0002-3145-9987)
+Antonio Celio Pereira de Mesquita, Aerospace Logistics Engineering Laboratory (AeroLogLab), Instituto Tecnológico de Aeronáutica (ITA), São José dos Campos, Brazil. celio@ita.br, ORCID [0000-0002-3145-9987](https://orcid.org/0000-0002-3145-9987)

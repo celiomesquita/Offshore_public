@@ -1,7 +1,0 @@
-{
-  "inputs": [
-    "pillar_dependency_inputs.csv",
-    "event_consequences.csv"
-  ],
-  "output": "component_dependence.csv"
-}
