@@ -2,7 +2,7 @@
 
 Replication package for the revised manuscript
 
-> A. C. P. de Mesquita, *From Offshore Maintenance Records to Fleet Priorities: Evidence Limits and Joint Policies*, submitted to *Reliability Engineering & System Safety* (manuscript JRESS-D-26-04044, revision).
+> Antonio C. P. Mesquita, *From Offshore Maintenance Records to Fleet Priorities: Evidence Limits and Joint Policies*, submitted to *Reliability Engineering & System Safety* (manuscript JRESS-D-26-04044, revision).
 
 It contains the anonymised operational data, the code needed to reproduce every analysis of the revised manuscript, and the supplementary material (Tables S1–S9).
 
